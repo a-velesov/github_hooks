@@ -1,18 +1,22 @@
 import React from 'react';
 import './App.css';
-import HeaderBlock from './components/HeaderBlock/HeaderBlock';
-import FooterBlock from './components/FooterBlock/FooterBlock';
-import ContentBlock from './components/ContentBlock/ContentBlock';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './components/Pages/Home';
+import About from './components/Pages/About';
+import Profile from './components/Pages/Profile';
+import Nav from './components/Nav';
 
 const App = () => {
-  return (<>
-      <HeaderBlock />
-      <ContentBlock
-        title='Учим React'
-        description='Онлайн-марафон по React.Js'
-      />
-      <FooterBlock />
-    </>
+  return (<BrowserRouter>
+      <Nav />
+      <div className='container pt-4'>
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/profile/:name' component={Profile} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 };
 
