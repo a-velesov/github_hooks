@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  align-items: center;
+
+
+  .menuItems {
+    display: inline-flex;
+    list-style-type: none;
+  }
+
+  .menuItems li {
+    align-items: center;
+    padding: 20px;
+
+  }
+
+}
