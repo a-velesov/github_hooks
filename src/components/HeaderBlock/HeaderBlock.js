@@ -1,15 +1,13 @@
 import React from 'react';
-import './HeaderBlock.css';
+import styles from './HeaderBlock.module.scss';
+import Nav from './Nav/Nav';
+import Search from './Seacrh/Search';
 
 const HeaderBlock = () => {
-  return (
-    <div>
-      <div>
-        <h1>Учите слова онлайн</h1>
-        <p>Воспользуйетсь карточками</p>
-      </div>
-    </div>
-  );
+  return (<section className={ styles.header }>
+    <Nav />
+    <Search />
+  </section>);
 };
 
 export default HeaderBlock;
