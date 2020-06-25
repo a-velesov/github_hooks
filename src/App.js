@@ -7,22 +7,25 @@ import Profile from './components/Pages/Profile';
 import Nav from './components/Nav';
 import Alert from './components/Alert';
 import AlertState from './context/alert/alertState';
+import GithubState from './context/github/githubState';
 
 const App = () => {
   return (
-    <AlertState>
-      <BrowserRouter>
-        <Nav />
-        <div className='container pt-4'>
-          <Alert alert={ { text: 'test' } } />
-          <Switch>
-            <Route path='/' exact component={ Home } />
-            <Route path='/about' component={ About } />
-            <Route path='/profile/:name' component={ Profile } />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </AlertState>
+    <GithubState>
+      <AlertState>
+        <BrowserRouter>
+          <Nav />
+          <div className='container pt-4'>
+            <Alert alert={ { text: 'test' } } />
+            <Switch>
+              <Route path='/' exact component={ Home } />
+              <Route path='/about' component={ About } />
+              <Route path='/profile/:name' component={ Profile } />
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </AlertState>
+    </GithubState>
   );
 };
 
